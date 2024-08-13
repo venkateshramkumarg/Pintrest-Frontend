@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Routes, Route} from 'react-router-dom';
+import Header from './Header';
+import Body from './Body';
+import Create from './Create';
+import WatchList from './WatchList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    return (
+        <div className='m-2 h-[200vh]'>
+            <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                <Routes>
+                    <Route path="/" element={<Body searchTerm={searchTerm} />} />
+                    <Route path='/create' element={<Create />} />
+                    <Route path="/watchList" element={<WatchList />} />
+                </Routes>
+        </div>
+    );
+};
 
 export default App;

@@ -1,6 +1,6 @@
-# Todo App
+# Pintrest
 
-Welcome to the Todo App! This project is a simple and intuitive task management application built with React. It helps you keep track of your tasks and stay organized.
+Welcome to the Pintrest! This project is a simple and intuitive task management application built with React. It helps you keep track of your tasks and stay organized.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/venkateshramkumarg/Pintrest-Frontend.git
     cd todo
     ```
 

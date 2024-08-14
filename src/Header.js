@@ -10,7 +10,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
 
   return (
     <div className="md:flex md:font-semibold md:w-full md:justify-between md:text-2xl flex justify-between font-semibold">
-      <div className="md:flex md:justify-evenly md:items-center md:w-[25%] md:gap-x-6 flex justify-evenly items-center">
+      <div className="md:flex md:justify-evenly md:items-center md:w-[35%] md:gap-x-6 flex justify-evenly items-center">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJjSZcYEnndhn9RvjJusPNh1Ccyusvl77M4A&s"
           alt=""
@@ -35,7 +35,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
           Create
         </button>
       </div>
-      <div className="md:flex md:w-[60%] md:items-center md:justify-end md:px-10 flex items-center">
+      <div className="md:flex md:w-[50%] md:items-center md:justify-end md:px-10 flex items-center">
         <input
           type="text"
           placeholder="Search"
@@ -44,7 +44,7 @@ const Header = ({ searchTerm, setSearchTerm }) => {
           className="border rounded-2xl bg-gray-100 hover:bg-slate-200 m-1 px-2 h-16 w-full"
         />
       </div>
-      <div className="md:flex md:items-center md:justify-evenly md:w-[10%]">
+      <div className="md:flex md:items-center md:justify-evenly md:w-[15%]">
         <button className="m-1 px-2 h-12 w-12 hover:rounded-full hover:bg-slate-200">
           <img
             src="https://i.pinimg.com/564x/9f/c6/6e/9fc66e90e264c04a9b69b3b724fb6dc4.jpg"

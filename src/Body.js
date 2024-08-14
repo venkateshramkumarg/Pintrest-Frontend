@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import "toastify-js/dist/toastify.css";
 
 const Body = ({ searchTerm }) => {
   const [images, setImages] = useState([]);
@@ -21,7 +19,6 @@ const Body = ({ searchTerm }) => {
   };
 
   const handleDelete = async (id) => {
-    console.log("Deleting image with id:", id); // Debugging line
     try {
       const response = await fetch(`http://localhost:3000/deleteImage/${id}`, {
         method: "DELETE",
@@ -29,12 +26,6 @@ const Body = ({ searchTerm }) => {
       if (!response.ok) throw new Error("Failed to delete image");
       const result = await response.json();
       console.log("Delete result:", result);
-      const handleClick = () => {
-        toast.success("Deleted Successfully!", {
-          autoHide: true,
-          position: "bottom-right",
-        });
-      };
 
       getImages();
     } catch (error) {

@@ -1,41 +1,41 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
-  const [title, setTitle] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [title, setTitle] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!title || !imageUrl) {
-      alert('Please fill in both fields');
+      alert("Please fill in both fields");
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:3000/postImage', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/postImage", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ title, imageUrl }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to post image');
+        throw new Error("Failed to post image");
       }
 
       const data = await response.json();
-      console.log('Data submitted successfully:', data);
+      console.log("Data submitted successfully:", data);
 
-      setTitle('');
-      setImageUrl('');
+      setTitle("");
+      setImageUrl("");
 
-      navigate('/');
+      navigate("/");
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -43,7 +43,10 @@ const Create = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="flex flex-col items-center p-8 bg-white rounded-lg shadow-md w-full max-w-sm">
         <h1 className="text-2xl font-semibold mb-4">Add New Image</h1>
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col space-y-4 w-full"
+        >
           <input
             type="text"
             placeholder="Enter Title"
